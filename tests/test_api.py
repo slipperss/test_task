@@ -5,7 +5,7 @@ from rest_framework import status
 
 
 # ====================================================================
-class PostApiTestCase(APITestCase):
+class PostApiTestCase(APITestCase): # теста CRUD-а поста
     # ****************************************************************
     def setUp(self):
         print('setUp')
@@ -139,7 +139,7 @@ class PostApiTestCase(APITestCase):
 
 
 # ====================================================================
-class CommentApiTestCase(APITestCase):
+class CommentApiTestCase(APITestCase): # тест CRUD-а коммента
     # ****************************************************************
     def setUp(self):
         print('setUp')
@@ -261,7 +261,7 @@ class CommentApiTestCase(APITestCase):
 
 
 # ====================================================================
-class LikeDislikeOnPostApiTestCase(APITestCase):
+class LikeDislikeOnPostApiTestCase(APITestCase): # тест лайка/дизлайка на пост
     # ****************************************************************
     def setUp(self):
         print('setUp')
@@ -330,7 +330,7 @@ class LikeDislikeOnPostApiTestCase(APITestCase):
 
 
 # ====================================================================
-# class PostAnalyticsApiTestCase(APITestCase):
+# class PostAnalyticsApiTestCase(APITestCase): # тест аналики поста
 #     # ****************************************************************
 #     def setUp(self):
 #         print('setUp')
@@ -382,7 +382,7 @@ class LikeDislikeOnPostApiTestCase(APITestCase):
 
 
 # ====================================================================
-class UserActivityApiTestCase(APITestCase):
+class UserActivityApiTestCase(APITestCase): # тест активности юзера
     # ****************************************************************
     def setUp(self):
         print('setUp')
