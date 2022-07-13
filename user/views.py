@@ -17,7 +17,7 @@ class UserActivityDetailView(APIView):
 
     def get(self, request, id, format=None):
         try:
-            analyzed_data = check_user_activity(id)
+            analyzed_data = check_user_activity(id) # достаем данные о активности пользователя
             if analyzed_data:
                 return Response(analyzed_data, status.HTTP_200_OK)
             return Response(
@@ -38,7 +38,7 @@ class CustomTokenObtainPairView(TokenObtainPairView):
         try:
             serializer.is_valid(raise_exception=True)
             user = UserAccount.objects.get(email=request.data['email'])
-            update_last_login(sender=None, user=user)
+            update_last_login(sender=None, user=user) # обновляем поле last_login у юзера когда у он получает токен
         except TokenError as e:
             raise InvalidToken(e.args[0])
 
