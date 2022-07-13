@@ -115,7 +115,7 @@ class PostsAnalyticsView(APIView):
                 date_from = self.request.query_params['date_from']
                 date_to = self.request.query_params['date_to']
                 analyzed_data = check_post_activity(date_from, date_to)
-            except:
+            except: # если не получаем date_from и date_to рассчитываем по дефолтным значеням в функции
                 analyzed_data = check_post_activity()
 
             if analyzed_data:
