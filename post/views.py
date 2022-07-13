@@ -110,7 +110,7 @@ class PostsAnalyticsView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request, format=None):
-        # try:
+        try:
             try:
                 date_from = self.request.query_params['date_from']
                 date_to = self.request.query_params['date_to']
@@ -123,8 +123,8 @@ class PostsAnalyticsView(APIView):
             return Response(
                 {'error': 'No data to show'},
                 status=status.HTTP_404_NOT_FOUND)
-        # except:
-        #     return Response(
-        #         {'error': 'Something went wrong when retrieving detail'},
-        #         status=status.HTTP_500_INTERNAL_SERVER_ERROR
-        #     )
+        except:
+            return Response(
+                {'error': 'Something went wrong when retrieving detail'},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
